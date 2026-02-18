@@ -7,6 +7,25 @@ const fs = require('fs');
 const http = require('http');
 const https = require('https');
 
+// Custom module for Lab 03
+function myFunction() {
+  return "Hello from custom module!";
+}
+
+function add(a, b) {
+  return a + b;
+}
+
+function greet(name) {
+  return `Welcome ${name} to Node.js modules!`;
+}
+
+module.exports = {
+  myFunction,
+  add,
+  greet
+};
+
 // 1. Read File
 console.log("1. Reading file...");
 fs.readFile('file.txt', 'utf8', function (err, data) {
@@ -48,6 +67,13 @@ https.get('https://jsonplaceholder.typicode.com/posts/1', (resp) => {
 }).on('error', (err) => {
   console.log("Error: " + err.message);
 });
+
+// 5. Using a Module
+console.log("\n5. Using custom module...");
+const myModule = require('./my-module.js');
+console.log(myModule.myFunction());
+console.log("Add 5 + 3 =", myModule.add(5, 3));
+console.log(myModule.greet("Nisal"));
 
 console.log('\nServer running at http://localhost:3000/');
 console.log('Press Ctrl+C to stop');
