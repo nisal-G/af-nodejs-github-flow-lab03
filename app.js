@@ -95,5 +95,38 @@ myPromise.then((result) => {
   console.log(error);
 });
 
+// 7. Async/Await
+console.log("\n7. Testing Async/Await...");
+
+async function myFunction() {
+  try {
+    const result = await myPromise;
+    console.log("Async/Await result:", result);
+  } catch (error) {
+    console.log("Async/Await error:", error);
+  }
+}
+
+myFunction();
+
+// Another async example with fetch simulation
+async function fetchUserData() {
+  console.log("Fetching user data...");
+  try {
+    const simulatedPromise = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ id: 1, name: "Nisal Gunathilaka", email: "nimgunathilaka021@gmail.com" });
+      }, 1500);
+    });
+    
+    const userData = await simulatedPromise;
+    console.log("User Data:", userData);
+  } catch (error) {
+    console.log("Error fetching user:", error);
+  }
+}
+
+fetchUserData();
+
 console.log('\nServer running at http://localhost:3000/');
 console.log('Press Ctrl+C to stop');
