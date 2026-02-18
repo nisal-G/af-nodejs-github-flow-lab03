@@ -1,0 +1,15 @@
+{
+  "name": "af-nodejs-github-flow-lab03",
+  "version": "1.0.0",
+  "description": "SE3040 Application Frameworks – Lab 03. Introduction to Node.js and GitHub Flow including branching, pull requests, and collaboration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
