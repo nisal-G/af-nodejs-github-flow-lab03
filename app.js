@@ -73,7 +73,27 @@ console.log("\n5. Using custom module...");
 const myModule = require('./my-module.js');
 console.log(myModule.myFunction());
 console.log("Add 5 + 3 =", myModule.add(5, 3));
-console.log(myModule.greet("Nisal"));
+console.log(myModule.greet("Student"));
+
+// 6. Promises
+console.log("\n6. Testing Promises...");
+const condition = true; // Change to false to test rejection
+
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    if (condition) {
+      resolve('Promise resolved: Success!');
+    } else {
+      reject('Promise rejected: Failure!');
+    }
+  }, 1000);
+});
+
+myPromise.then((result) => {
+  console.log(result);
+}).catch((error) => {
+  console.log(error);
+});
 
 console.log('\nServer running at http://localhost:3000/');
 console.log('Press Ctrl+C to stop');
