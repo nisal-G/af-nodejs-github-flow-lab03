@@ -1,9 +1,11 @@
 console.log("Hello from Node.js!");
 console.log("Lab 03 - Introduction to Node.js and GitHub Flow");
 
-console.log("=== Node.js File Operations Demo ===\n");
+console.log("=== Node.js Complete Demo ===\n");
 
 const fs = require('fs');
+const http = require('http');
+const https = require('https');
 
 // 1. Read File
 console.log("1. Reading file...");
@@ -20,3 +22,32 @@ fs.writeFile('output.txt', 'Hello World! This is written by Node.js', function (
   if (err) throw err;
   console.log('File saved successfully!');
 });
+
+// 3. Web Server
+console.log("\n3. Starting web server on port 3000...");
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write('<h1>Hello World!</h1>');
+  res.write('<p>Welcome to Node.js Web Server</p>');
+  res.end();
+}).listen(3000);
+
+// 4. Making an HTTP Request
+console.log("4. Making HTTP request to API...");
+https.get('https://jsonplaceholder.typicode.com/posts/1', (resp) => {
+  let data = '';
+
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  resp.on('end', () => {
+    console.log("API Response:");
+    console.log(JSON.parse(data));
+  });
+}).on('error', (err) => {
+  console.log("Error: " + err.message);
+});
+
+console.log('\nServer running at http://localhost:3000/');
+console.log('Press Ctrl+C to stop');
