@@ -242,7 +242,7 @@ ISC
 - **Lab:** Lab 03 - Introduction to Node.js and GitHub Flow
 - **Institution:** SLIIT (Sri Lanka Institute of Information Technology)
 - **Year:** 3rd Year, Semester 1
-- **Academic Year:** 2025/2026
+- **Academic Year:** 2026
 
 ---
 
