@@ -6,9 +6,6 @@ SE3040 Application Frameworks – Lab 03. Introduction to Node.js and GitHub Flo
 ## Author
 Nisal Gunathilaka
 
-## Lab Completion Date
-February 19, 2026
-
 ## Prerequisites
 - Node.js (v14 or higher)
 - Git
