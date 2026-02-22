@@ -127,7 +127,3 @@ async function fetchUserData() {
 }
 
 fetchUserData();
-
-// Note: The server will keep running until you stop it manually
-console.log('\nServer running at http://localhost:3000/'); 
-console.log('Press Ctrl+C to stop');
